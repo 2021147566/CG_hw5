@@ -88,7 +88,7 @@ function render() {
     const camZ = cameraCircleRadius * Math.cos(glMatrix.toRadian(cameraCircleSpeed * elapsedTime)); 
 
     const theta = 2 * Math.PI * (elapsedTime / 8);
-    const camY = (1 - Math.cos(theta)) * 5;
+    const camY = (1 - Math.sin(theta)) * 5;
     // Viewing transformation matrix (camera rotates around the origin on the xz plane, looks at the origin)
     mat4.lookAt(viewMatrix, 
         vec3.fromValues(camX, camY + cameraCircleHeight, camZ), // camera position
